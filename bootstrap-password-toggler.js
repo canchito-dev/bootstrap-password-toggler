@@ -112,7 +112,8 @@
 		
 		this.each(function() {
 			var $this = $(this);
-			Password.init($this, $this.data());
+			var settings = $.extend($this.data(), options);
+			Password.init($this, settings);
 		});
 		
 		return this;
