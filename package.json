@@ -1,0 +1,20 @@
+{
+    "name": "canchito-dev/bootstrap-password-toggler",
+    "version": "1.0.0",
+    "type": "project",
+    "description": "Bootstrap Password Toggler is a very simple but effective jQuery plugin for showing/hiding password. It fully support Bootstrap v4",
+    "keywords": ["skeleton", "boilerplate", "framework", "barebone", "application"],
+    "homepage": "http://canchito-dev/projects/bpt",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "José Carlos Mendoza Prego",
+            "role": "Developer",
+            "email": "contact@canchito-dev.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/canchito-dev/bootstrap-password-toggler/issues",
+        "source": "https://github.com/canchito-dev/bootstrap-password-toggler"
+    }
+}
