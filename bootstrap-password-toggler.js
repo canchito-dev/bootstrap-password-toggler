@@ -44,6 +44,7 @@
         iconShow: 'fa-eye',
         iconHide: 'fa-eye-slash',
         tooltip: 'Show/Hide password',
+        version: '1.0.0',
         debug: true
     };
     
@@ -79,9 +80,17 @@
 					this.$icon.find('i')
 		            	.removeClass(Password.defaults.iconShow)
 		            	.addClass(Password.defaults.iconHide);
+					// Support for Font Awesome v5
+					this.$icon.find('svg')
+		            	.removeClass(Password.defaults.iconShow)
+		            	.addClass(Password.defaults.iconHide);
 				} else {
 					this.$element.attr('type', 'password');
 					this.$icon.find('i')
+		            	.removeClass(Password.defaults.iconHide)
+		            	.addClass(Password.defaults.iconShow);
+					// Support for Font Awesome v5
+					this.$icon.find('svg')
 		            	.removeClass(Password.defaults.iconHide)
 		            	.addClass(Password.defaults.iconShow);
 				}
