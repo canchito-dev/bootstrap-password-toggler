@@ -1,7 +1,7 @@
 /**
  * This content is released under the MIT License (MIT)
  *
- * Copyright (c) 2016, canchito-dev
+ * Copyright (c) 2018, canchito-dev
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,9 +22,10 @@
  * THE SOFTWARE.
  * 
  * @author 		Jose Carlos Mendoza Prego
- * @copyright	Copyright (c) 2017, canchito-dev (http://www.canchito-dev.com)
+ * @copyright	Copyright (c) 2018, canchito-dev (http://www.canchito-dev.com)
  * @license		http://opensource.org/licenses/MIT	MIT License
  * @link		https://github.com/canchito-dev/bootstrap-password-toggler
+ * @link		http://canchito-dev/projects/bpt
  **/
 (function( $ ) {
 
@@ -44,8 +45,8 @@
         iconShow: 'fa-eye',
         iconHide: 'fa-eye-slash',
         tooltip: 'Show/Hide password',
-        version: '1.0.0',
-        debug: true
+        version: '1.0.1',
+        debug: false
     };
     
 	Password.prototype.init = function(element, options) {
@@ -53,14 +54,15 @@
 				
 				this.$element.wrap('<div class="input-group"></div>');
 				
-				this.$icon = $(['<span class="input-group-addon" title="' + this.options.tooltip + '"><i class="' 
+				this.$icon = $(['<span class="input-group-text" title="' + this.options.tooltip + '"><i class="' 
 					+ this.options.iconPrefix + ' ' 
 					+ this.options.iconHide + '" aria-hidden="true"></i></span>'].join('')).css('cursor', 'pointer');
 				
-				if(this.options.append == 'left')
-					this.$icon.insertBefore(this.$element);
-				else
-					this.$icon.insertAfter(this.$element);
+				this.$icon.wrap('<div class="input-group-' +
+						(this.options.append == 'left') ? 'prepend' : 'append'
+						+ '"></div>');
+				
+				this.$icon.insertAfter(this.$element);
 				
 				this.bindEvents();
 				
