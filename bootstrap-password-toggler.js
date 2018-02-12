@@ -56,7 +56,7 @@
 				
 				this.$icon = $(['<span class="input-group-text" title="' + this.options.tooltip + '"><i class="' 
 					+ this.options.iconPrefix + ' ' 
-					+ this.options.iconHide + '" aria-hidden="true"></i></span>'].join('')).css('cursor', 'pointer');
+					+ this.options.iconShow + '" aria-hidden="true"></i></span>'].join('')).css('cursor', 'pointer');
 				
 				this.$icon.wrap('<div class="input-group-' +
 						(this.options.append == 'left') ? 'prepend' : 'append'
