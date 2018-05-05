@@ -40,12 +40,12 @@
     };
     
     Password.defaults = {
-        append: 'right',				// can be left or right
+        append: 'append',				// can be prepend or append
         iconPrefix: 'fa',		
         iconShow: 'fa-eye',
         iconHide: 'fa-eye-slash',
         tooltip: 'Show/Hide password',
-        version: '1.0.1',
+        version: '1.0.2',
         debug: false
     };
     
@@ -54,15 +54,14 @@
 				
 				this.$element.wrap('<div class="input-group"></div>');
 				
-				this.$icon = $(['<span class="input-group-text" title="' + this.options.tooltip + '"><i class="' 
+				this.$icon = $(['<div class="input-group-' + this.options.append	+ '"><span class="input-group-text" title="' + this.options.tooltip + '"><i class="' 
 					+ this.options.iconPrefix + ' ' 
-					+ this.options.iconShow + '" aria-hidden="true"></i></span>'].join('')).css('cursor', 'pointer');
+					+ this.options.iconShow + '" aria-hidden="true"></i></span></div>'].join('')).css('cursor', 'pointer');
 				
-				this.$icon.wrap('<div class="input-group-' +
-						(this.options.append == 'left') ? 'prepend' : 'append'
-						+ '"></div>');
-				
-				this.$icon.insertAfter(this.$element);
+				if(this.options.append == 'prepend')
+					this.$icon.insertBefore(this.$element);
+				else
+					this.$icon.insertAfter(this.$element);
 				
 				this.bindEvents();
 				

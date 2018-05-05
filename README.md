@@ -77,8 +77,8 @@ Options can be passed via data attributes or JavaScript.
 			<td>append</td>
 			<td>data-append</td>
 			<td>String</td>
-			<td>right</td>
-			<td>Appends the show/hide icon. Possible values are 'right' or 'left'</td>
+			<td>append</td>
+			<td>Appends the show/hide icon. Possible values are 'append' or 'prepend'</td>
 		</tr>
 		<tr>
 			<td>tooltip</td>
